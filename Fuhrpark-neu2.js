@@ -1,11 +1,3 @@
-// ==UserScript==
-// @name         Fuhrpark-neu2
-// @version      3.0.0a
-// @author       freakZ112
-// @description  Zeigt den kompletten Fuhrpark, sowie diverse Statistiken
-// @include      /^https?:\/\/(?:w{3}\.)?(?:polizei\.)?leitstellenspiel\.de\/$/
-// @grant        GM_addStyle
-// ==/UserScript==
 /* global $ user_id checkUserId user_name getVehiclesApi getApi */
 
 const fum_datestring = new Date().getTime(),
