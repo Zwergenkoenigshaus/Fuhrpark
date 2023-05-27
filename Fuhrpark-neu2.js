@@ -1,17 +1,16 @@
 /* global $ user_id checkUserId user_name getVehiclesApi getApi */
 
-const fum_datestring = new Date().getTime(),
+const fum_url = "https://raw.githubusercontent.com", /* live */
       aVehicles = await $.getJSON('/api/vehicles'),
       aBuildings = await $.getJSON('/api/buildings'),
       aCredits = await $.getJSON('/api/credits'),
-      fum_url = "https://raw.githubusercontent.com/freakZ112"; /* live */
+      fum_datestring = new Date().getTime();
 
-var   aVehicleTypesNew = aVehicleTypesNew || [];
-
+var aVehicleTypesNew = aVehicleTypesNew || [];
 
 (async function () {
 
-    await $.getScript(`${ fum_url }/stats/main/var_func.js?${ fum_datestring }`);
+    await $.getScript(`${ fum_url }/fuhrparkmanager/variables_functions.js?${ fum_datestring }`);
 
     const securityCheck = await checkUserId(user_id);
 
@@ -78,7 +77,7 @@ var   aVehicleTypesNew = aVehicleTypesNew || [];
 
     $('head').append(`<link rel="stylesheet" href="${ fum_url }/fuhrparkmanager/main.css?${ new Date().getTime() }" type="text/css" />`);
 
-    await $.getScript(`$https://raw.githubusercontent.com/freakZ112/stats/main/modal.js?${ fum_datestring }`);
-    await $.getScript(`$https://raw.githubusercontent.com/freakZ112/stats/main/ini_fun.js?${ fum_datestring }`);
-    await $.getScript(`$https://raw.githubusercontent.com/freakZ112/stats/main/oc.js?${ fum_datestring }`);
+    await $.getScript(`${ fum_url }/freakZ112/stats/main/modal.js?${ fum_datestring }`);
+    await $.getScript(`${ fum_url }freakZ112/stats/main/ini_fun.js?${ fum_datestring }`);
+    await $.getScript(`${ fum_url }freakZ112/stats/main/oc.js?${ fum_datestring }`);
 })();
